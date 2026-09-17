@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopción de Gatitos - 1 Mes de Edad</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <header class="navbar">
+        <div class="logo"><i class="fa-solid fa-cat"></i> Adopta un Michi</div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#gatos">Los Gatitos</a>
+            <a href="https://wa.me/584243375982?text=Hola,%20estoy%20interesado%20en%20adoptar%20a%20uno%20de%20los%20gatitos%20bebes" class="btn-whatsapp-nav" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> Contacto Directo
+            </a>
+        </nav>
+    </header>
+
+    <!-- Sección de Introducción -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>¡Tres hermosos gatitos buscan una familia!</h1>
+            <p>Tienen apenas <strong>1 mes de nacidos</strong> y están listos para recibir todo el amor del mundo. Conoce a cada uno y elige a tu nuevo compañero.</p>
+            <a href="#gatos" class="btn-principal">Ver a los Gatitos</a>
+        </div>
+    </section>
+
+    <!-- Galería de los 3 Gatitos -->
+    <section id="gatos" class="galeria-seccion">
+        <h2>Nuestros Bebés en Adopción</h2>
+        <div class="grid-gatos">
+            {% for gato in lista_gatos %}
+                <div class="card-gato">
+                    <div class="card-img-container">
+                        <img src="{{ url_for('static', filename=gato.imagen) }}" alt="{{ gato.nombre }}">
+                    </div>
+                    <div class="card-body">
+                        <h3>{{ gato.nombre }}</h3>
+                        <p class="edad"><i class="fa-regular fa-clock"></i> Edad: <strong>{{ gato.edad }}</strong></p>
+                        <p class="desc">{{ gato.caracteristica }}</p>
+                        
+                        <!-- Botón de WhatsApp con tu número integrado -->
+                        <a href="https://wa.me/584243375982?text=Hola,%20me%20enamoré%20de%20{{ gato.nombre }}%20y%20quiero%20adoptarlo." class="btn-whatsapp" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> ¡Quiero adoptar a {{ gato.nombre }}!
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 Adopción de Gatos - Cada vida importa 🐾</p>
+    </footer>
+
+</body>
+</html>
