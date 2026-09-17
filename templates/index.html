@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adopción de Gatitos | Encuentra a tu Compañero</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilos de respaldo integrados para garantizar que el diseño luzca perfecto */
         :root {
             --color-primario: #ff7f50;
             --color-fondo: #fff8f0;
@@ -83,7 +81,7 @@
             font-size: 1.6rem;
         }
         .btn-adoptar {
-            background-color: #25d366; /* Color oficial WhatsApp */
+            background-color: #25d366;
             color: white;
             padding: 12px 20px;
             text-align: center;
@@ -111,8 +109,8 @@
         <!-- Tarjeta 1: Luna -->
         <article class="gato-card">
             <div class="card-image">
-                <!-- Usamos url_for tradicional que ahora funcionará de forma limpia -->
-                <img src="{{ url_for('static', filename='gato1.jpeg') }}" alt="Luna" onerror="this.src='https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=600&q=80'">
+                <!-- Reemplaza el texto entre comillas del src por tu código Base64 o la ruta directa de tu imagen real -->
+                <img src="{{ url_for('static', filename='gato1.jpeg') }}" alt="Luna">
                 <span class="tag-edad">1 mes</span>
             </div>
             <div class="card-content">
@@ -128,7 +126,7 @@
         <!-- Tarjeta 2: Simona -->
         <article class="gato-card">
             <div class="card-image">
-                <img src="{{ url_for('static', filename='gato2.jpeg') }}" alt="Simona" onerror="this.src='https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=600&q=80'">
+                <img src="{{ url_for('static', filename='gato2.jpeg') }}" alt="Simona">
                 <span class="tag-edad">1 mes y medio</span>
             </div>
             <div class="card-content">
@@ -144,7 +142,7 @@
         <!-- Tarjeta 3: Copito -->
         <article class="gato-card">
             <div class="card-image">
-                <img src="{{ url_for('static', filename='gato3.jpeg') }}" alt="Copito" onerror="this.src='https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=600&q=80'">
+                <img src="{{ url_for('static', filename='gato3.jpeg') }}" alt="Copito">
                 <span class="tag-edad">2 meses</span>
             </div>
             <div class="card-content">
