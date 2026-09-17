@@ -3,93 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adopción de Gatitos - Encuentra tu Compañero</title>
-    <!-- Enlace a los estilos CSS en la carpeta static -->
+    <title>Adopción de Gatitos | Encuentra a tu Compañero</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <!-- Fuentes de Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos de respaldo integrados para garantizar que el diseño luzca perfecto */
+        :root {
+            --color-primario: #ff7f50;
+            --color-fondo: #fff8f0;
+            --color-texto: #555;
+            --color-acento: #ff6348;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(135deg, var(--color-fondo), #fff);
+            padding: 3rem 1rem;
+            text-align: center;
+            border-bottom: 5px solid var(--color-primario);
+        }
+        header h1 {
+            color: var(--color-primario);
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .adopcion-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        .gato-card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+            width: 340px;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-image {
+            position: relative;
+            height: 250px;
+            background-color: #eee;
+        }
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .tag-edad {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--color-primario);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .card-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .card-content h2 {
+            color: var(--color-acento);
+            margin: 0;
+            font-size: 1.6rem;
+        }
+        .btn-adoptar {
+            background-color: #25d366; /* Color oficial WhatsApp */
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            display: block;
+            box-shadow: 0 4px 6px rgba(37,211,102,0.3);
+            transition: transform 0.2s;
+        }
+        .btn-adoptar:hover {
+            transform: scale(1.02);
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Encabezado principal -->
-    <header class="main-header">
-        <div class="header-container">
-            <h1>Dale un Hogar a un Amigo</h1>
-            <p>Conoce a estos pequeños que sueñan con darte todo su amor.</p>
-        </div>
+    <header>
+        <h1>Nuestros Bebés Buscan un Hogar</h1>
+        <p>Conoce a estos pequeños que sueñan con darte todo su amor.</p>
     </header>
 
-    <!-- Contenido Principal: Listado de Gatitos -->
-    <main class="container">
-        <section class="grid-gatos">
+    <main class="adopcion-container">
+        
+        <!-- Tarjeta 1: Luna -->
+        <article class="gato-card">
+            <div class="card-image">
+                <!-- Usamos url_for tradicional que ahora funcionará de forma limpia -->
+                <img src="{{ url_for('static', filename='gato1.jpeg') }}" alt="Luna" onerror="this.src='https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=600&q=80'">
+                <span class="tag-edad">1 mes</span>
+            </div>
+            <div class="card-content">
+                <h2>Luna</h2>
+                <p><strong>Edad:</strong> 1 mes</p>
+                <p>Una bolita de pelos muy juguetona y cariñosa. Le encanta explorar y dormir en lugares calentitos.</p>
+                <a href="https://wa.me/" target="_blank" class="btn-adoptar">
+                    📱 ¡Quiero adoptar a Luna!
+                </a>
+            </div>
+        </article>
 
-            <!-- Tarjeta 1: Luna -->
-            <article class="gato-card">
-                <div class="card-image">
-                    <img src="{{ url_for('static', filename='gato1.jpeg') }}" alt="Gatito 1 tierno" loading="lazy">
-                    <span class="tag-edad">1 mes</span>
-                </div>
-                <div class="card-content">
-                    <h2>Luna</h2>
-                    <p class="gato-info">
-                        <span class="icon">⏰</span> <strong>Edad:</strong> 1 mes
-                    </p>
-                    <p class="gato-desc">
-                        Una bolita de pelos muy juguetona y cariñosa. Le encanta explorar y dormir en lugares calentitos.
-                    </p>
-                    <a href="https://wa.me/584120000000?text=Hola,%20estoy%20interesado%20en%20adoptar%20a%20Luna" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
-                        📱 ¡Quiero adoptar a Luna!
-                    </a>
-                </div>
-            </article>
+        <!-- Tarjeta 2: Simona -->
+        <article class="gato-card">
+            <div class="card-image">
+                <img src="{{ url_for('static', filename='gato2.jpeg') }}" alt="Simona" onerror="this.src='https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=600&q=80'">
+                <span class="tag-edad">1 mes y medio</span>
+            </div>
+            <div class="card-content">
+                <h2>Simona</h2>
+                <p><strong>Edad:</strong> 1 mes y medio</p>
+                <p>Muy curiosa y llena de energía. Siempre lista para jugar con cualquier cordón o bolita de papel.</p>
+                <a href="https://wa.me/" target="_blank" class="btn-adoptar">
+                    📱 ¡Quiero adoptar a Simona!
+                </a>
+            </div>
+        </article>
 
-            <!-- Tarjeta 2: Simona -->
-            <article class="gato-card">
-                <div class="card-image">
-                    <img src="{{ url_for('static', filename='gato2.jpeg') }}" alt="Gatito 2 activo" loading="lazy">
-                    <span class="tag-edad">1 mes y medio</span>
-                </div>
-                <div class="card-content">
-                    <h2>Simona</h2>
-                    <p class="gato-info">
-                        <span class="icon">⏰</span> <strong>Edad:</strong> 1 mes y medio
-                    </p>
-                    <p class="gato-desc">
-                        Muy curiosa y llena de energía. Siempre lista para jugar con cualquier cordón o bolita de papel.
-                    </p>
-                    <a href="https://wa.me/584120000000?text=Hola,%20estoy%20interesado%20en%20adoptar%20a%20Simona" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
-                        📱 ¡Quiero adoptar a Simona!
-                    </a>
-                </div>
-            </article>
+        <!-- Tarjeta 3: Copito -->
+        <article class="gato-card">
+            <div class="card-image">
+                <img src="{{ url_for('static', filename='gato3.jpeg') }}" alt="Copito" onerror="this.src='https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=600&q=80'">
+                <span class="tag-edad">2 meses</span>
+            </div>
+            <div class="card-content">
+                <h2>Copito</h2>
+                <p><strong>Edad:</strong> 2 meses</p>
+                <p>Tranquilo, dulce y muy regalón. Le encanta acurrucarse en las piernas y ronronear todo el día.</p>
+                <a href="https://wa.me/" target="_blank" class="btn-adoptar">
+                    📱 ¡Quiero adoptar a Copito!
+                </a>
+            </div>
+        </article>
 
-            <!-- Tarjeta 3: Copito -->
-            <article class="gato-card">
-                <div class="card-image">
-                    <img src="{{ url_for('static', filename='gato3.jpeg') }}" alt="Gatito 3 tranquilo" loading="lazy">
-                    <span class="tag-edad">2 meses</span>
-                </div>
-                <div class="card-content">
-                    <h2>Copito</h2>
-                    <p class="gato-info">
-                        <span class="icon">⏰</span> <strong>Edad:</strong> 2 meses
-                    </p>
-                    <p class="gato-desc">
-                        Tranquilo, dulce y muy regalón. Le encanta acurrucarse en las piernas y ronronear todo el día.
-                    </p>
-                    <a href="https://wa.me/584120000000?text=Hola,%20estoy%20interesado%20en%20adoptar%20a%20Copito" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
-                        📱 ¡Quiero adoptar a Copito!
-                    </a>
-                </div>
-            </article>
-
-        </section>
     </main>
-
-    <!-- Pie de página -->
-    <footer class="main-footer">
-        <p>&copy; 2026 Adopción de Gatitos. Todos los derechos reservados.</p>
-    </footer>
 
 </body>
 </html>
