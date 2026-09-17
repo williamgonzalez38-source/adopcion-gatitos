@@ -3,50 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adopción de Gatitos</title>
+    <title>Adopción de Gatitos | Amor a Primera Vista</title>
+    <!-- Vinculamos la hoja de estilos -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Fuente moderna (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="container">
-        <h1>Nuestros Bebés en Adopción</h1>
-
-        <!-- Tarjeta de Gatito 1 -->
-        <div class="card">
-            <!-- Usamos url_for para apuntar correctamente a la carpeta static -->
-            <img src="{{ url_for('static', filename='gato1.jpg') }}" alt="Gatito 1">
-            
-            <h2>Gatito 1</h2>
-            <p><span class="icon">⏰</span> Edad: <strong>1 mes</strong></p>
-            <p class="description">Tierno, juguetón y busca un hogar lleno de amor.</p>
-            
-            <a href="https://wa.me/tu_numero_aqui" target="_blank" class="btn-whatsapp">
-                ¡Quiero adoptar a Gatito 1!
-            </a>
+    <!-- Cabecera de la página -->
+    <header>
+        <div class="header-content">
+            <span class="paw-icon">🐾</span>
+            <h1>Nuestros Bebés Buscan un Hogar</h1>
+            <p>Conoce a estos pequeños que sueñan con darte todo su amor.</p>
         </div>
+    </header>
 
-        <!-- Puedes repetir la misma estructura para el Gato 2 y Gato 3 cambiando el nombre del archivo -->
-        <div class="card">
-            <img src="{{ url_for('static', filename='gato2.jpg') }}" alt="Gatito 2">
-            <h2>Gatito 2</h2>
-            <p><span class="icon">⏰</span> Edad: <strong>1 mes y medio</strong></p>
-            <p class="description">Muy activo y cariñoso.</p>
-            <a href="https://wa.me/tu_numero_aqui" target="_blank" class="btn-whatsapp">
-                ¡Quiero adoptar a Gatito 2!
-            </a>
-        </div>
+    <!-- Contenedor principal de las tarjetas -->
+    <main class="adopcion-container">
+        
+        <!-- Tarjeta 1: Gatito 1 -->
+        <article class="gato-card">
+            <div class="card-image">
+                <img src="{{ url_for('static', filename='gato1.jpg') }}" alt="Gatito 1 tierno" loading="lazy">
+                <span class="tag-edad">1 mes</span>
+            </div>
+            <div class="card-content">
+                <h2 class="gato-nombre">Luna</h2>
+                <div class="gato-info">
+                    <span class="info-item"><span class="icon">⏰</span> <strong>Edad:</strong> 1 mes</span>
+                    <p class="gato-descripcion">Una bolita de pelos muy juguetona y cariñosa. Le encanta explorar y dormir en lugares calentitos.</p>
+                </div>
+                <a href="https://wa.me/tu_numero_aqui" target="_blank" class="btn-adoptar">
+                    <span class="whatsapp-icon">📱</span> ¡Quiero adoptar a Luna!
+                </a>
+            </div>
+        </article>
 
-        <div class="card">
-            <img src="{{ url_for('static', filename='gato3.jpg') }}" alt="Gatito 3">
-            <h2>Gatito 3</h2>
-            <p><span class="icon">⏰</span> Edad: <strong>2 meses</strong></p>
-            <p class="description>Tranquilo y listo para un nuevo hogar.</p>
-            <a href="https://wa.me/tu_numero_aqui" target="_blank" class="btn-whatsapp">
-                ¡Quiero adoptar a Gatito 3!
-            </a>
-        </div>
+        <!-- Tarjeta 2: Gatito 2 -->
+        <article class="gato-card">
+            <div class="card-image">
+                <img src="{{ url_for('static', filename='gato2.jpg') }}" alt="Gatito 2 activo" loading="lazy">
+                <span class="tag-edad">1 mes y medio</span>
+            </div>
+            <div class="card-content">
+                <h2 class="gato-nombre">Simba</h2>
+                <div class="gato-info">
+                    <span class="info-item"><span class="icon">⏰</span> <strong>Edad:</strong> 1 mes y medio</span>
+                    <p class="gato-descripcion">Muy activo y curioso. Busca una familia que le siga el ritmo de sus travesuras y le dé muchos mimos.</p>
+                </div>
+                <a href="https://wa.me/tu_numero_aqui" target="_blank" class="btn-adoptar">
+                    <span class="whatsapp-icon">📱</span> ¡Quiero adoptar a Simba!
+                </a>
+            </div>
+        </article>
 
-    </div>
+        <!-- Tarjeta 3: Gatito 3 -->
+        <article class="gato-card">
+            <div class="card-image">
+                <img src="{{ url_for('static', filename='gato3.jpg') }}" alt="Gatito 3 tranquilo" loading="lazy">
+                <span class="tag-edad">2 meses</span>
+            </div>
+            <div class="card-content">
+                <h2 class="gato-nombre">Oliver</h2>
+                <div class="gato-info">
+                    <span class="info-item"><span class="icon">⏰</span> <strong>Edad:</strong> 2 meses</span>
+                    <p class="gato-descripcion">Tranquilo y observador. Prefiere la compañía y los juegos suaves. Ideal para un hogar que busque paz.</p>
+                </div>
+                <a href="https://wa.me/tu_numero_aqui" target="_blank" class="btn-adoptar">
+                    <span class="whatsapp-icon">📱</span> ¡Quiero adoptar a Oliver!
+                </a>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Adopta un Michi - ¡Ayuda a cambiar una vida!</p>
+    </footer>
 
 </body>
 </html>
